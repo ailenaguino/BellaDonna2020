@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
+    <link rel="stylesheet" href="~/Content/style.css">
+
+    @RenderSection("head", required: false)
+
+</head>
+<body>
+    <header>
+        <div id="header-spc" class="mb-5">
+            <div id="logo-header">
+                <h1>Bella Donna</h1>
+            </div>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="#">INICIO</a>
+                </li>
+                <li>
+                    <a href="aboutUs.html">NOSOTROS</a>
+                </li>
+                <li>
+                    <a href="treatments.html">TRATAMIENTOS</a>
+                </li>
+                <li>
+                    <a href="contact.html">CONTACTO</a>
+                </li>
+                <li>
+                    <a href="appointment.html">PEDIR TURNO</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div>
+            @RenderBody()
+        </div>
+    </main>
+    <footer>
+        <div id="foot1">
+            <ul>
+                <li>
+                    <a href="#">INICIO</a>
+                </li>
+                <li>
+                    <a href="aboutUs.html">NOSOTROS</a>
+                </li>
+                <li>
+                    <a href="treatments.html">TRATAMIENTOS</a>
+                </li>
+                <li>
+                    <a href="contact.html">CONTACTO</a>
+                </li>
+                <li>
+                    <a href="appointment.html">PEDIR TURNO</a>
+                </li>
+            </ul>
+        </div>
+        <div id="foot2">
+            <img src="~/Content/img/bella-donna-feather.png" alt="">
+        </div>
+        <div id="foot3">
+            <h1>Bella Donna</h1>
+            <div class="redes">
+                <div class="whatsapp">
+                    <a href="https://api.whatsapp.com/send?phone=541162333941" target="_blank">
+                        <img src="~/Content/img/whatsapp.png" alt="Whatsapp">
+                    </a>
+                </div>
+                <div class="insta">
+                    <a href="https://www.instagram.com/belladonna.depilacion/" target="_blank">
+                        <img src="~/Content/img/instagram.png" alt="Instagram">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="~/Content/js/ejemplo-async-await.js"></script>
+
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

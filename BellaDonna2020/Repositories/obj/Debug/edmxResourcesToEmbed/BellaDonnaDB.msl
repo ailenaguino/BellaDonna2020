@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BellaDonnaDBModelStoreContainer" CdmEntityContainer="Contexto">
+    <EntitySetMapping Name="Promos">
+      <EntityTypeMapping TypeName="BellaDonnaDBModel.Promos">
+        <MappingFragment StoreEntitySet="Promos">
+          <ScalarProperty Name="IdPromo" ColumnName="IdPromo" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Sesiones" ColumnName="Sesiones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tratamientos">
+      <EntityTypeMapping TypeName="BellaDonnaDBModel.Tratamientos">
+        <MappingFragment StoreEntitySet="Tratamientos">
+          <ScalarProperty Name="IdTratamiento" ColumnName="IdTratamiento" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="TratamientoPromo" TypeName="BellaDonnaDBModel.TratamientoPromo" StoreEntitySet="TratamientoPromo">
+      <EndProperty Name="Promos">
+        <ScalarProperty Name="IdPromo" ColumnName="IdPromo" />
+      </EndProperty>
+      <EndProperty Name="Tratamientos">
+        <ScalarProperty Name="IdTratamiento" ColumnName="IdTratamiento" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

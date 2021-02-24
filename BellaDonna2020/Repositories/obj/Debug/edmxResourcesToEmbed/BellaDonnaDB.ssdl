@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BellaDonnaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Promos">
+    <Key>
+      <PropertyRef Name="IdPromo" />
+    </Key>
+    <Property Name="IdPromo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Precio" Type="int" Nullable="false" />
+    <Property Name="Sesiones" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TratamientoPromo">
+    <Key>
+      <PropertyRef Name="IdTratamiento" />
+      <PropertyRef Name="IdPromo" />
+    </Key>
+    <Property Name="IdTratamiento" Type="int" Nullable="false" />
+    <Property Name="IdPromo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tratamientos">
+    <Key>
+      <PropertyRef Name="IdTratamiento" />
+    </Key>
+    <Property Name="IdTratamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="75" Nullable="false" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Precio" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Promo">
+    <End Role="Promos" Type="Self.Promos" Multiplicity="1" />
+    <End Role="TratamientoPromo" Type="Self.TratamientoPromo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Promos">
+        <PropertyRef Name="IdPromo" />
+      </Principal>
+      <Dependent Role="TratamientoPromo">
+        <PropertyRef Name="IdPromo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tratamiento">
+    <End Role="Tratamientos" Type="Self.Tratamientos" Multiplicity="1" />
+    <End Role="TratamientoPromo" Type="Self.TratamientoPromo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tratamientos">
+        <PropertyRef Name="IdTratamiento" />
+      </Principal>
+      <Dependent Role="TratamientoPromo">
+        <PropertyRef Name="IdTratamiento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BellaDonnaDBModelStoreContainer">
+    <EntitySet Name="Promos" EntityType="Self.Promos" Schema="Tratamientos" store:Type="Tables" />
+    <EntitySet Name="TratamientoPromo" EntityType="Self.TratamientoPromo" Schema="Tratamientos" store:Type="Tables" />
+    <EntitySet Name="Tratamientos" EntityType="Self.Tratamientos" Schema="Tratamientos" store:Type="Tables" />
+    <AssociationSet Name="FK_Promo" Association="Self.FK_Promo">
+      <End Role="Promos" EntitySet="Promos" />
+      <End Role="TratamientoPromo" EntitySet="TratamientoPromo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tratamiento" Association="Self.FK_Tratamiento">
+      <End Role="Tratamientos" EntitySet="Tratamientos" />
+      <End Role="TratamientoPromo" EntitySet="TratamientoPromo" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="BellaDonnaDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Promos">
+          <Key>
+            <PropertyRef Name="IdPromo" />
+          </Key>
+          <Property Name="IdPromo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Precio" Type="int" Nullable="false" />
+          <Property Name="Sesiones" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TratamientoPromo">
+          <Key>
+            <PropertyRef Name="IdTratamiento" />
+            <PropertyRef Name="IdPromo" />
+          </Key>
+          <Property Name="IdTratamiento" Type="int" Nullable="false" />
+          <Property Name="IdPromo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tratamientos">
+          <Key>
+            <PropertyRef Name="IdTratamiento" />
+          </Key>
+          <Property Name="IdTratamiento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="75" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Precio" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Promo">
+          <End Role="Promos" Type="Self.Promos" Multiplicity="1" />
+          <End Role="TratamientoPromo" Type="Self.TratamientoPromo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Promos">
+              <PropertyRef Name="IdPromo" />
+            </Principal>
+            <Dependent Role="TratamientoPromo">
+              <PropertyRef Name="IdPromo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tratamiento">
+          <End Role="Tratamientos" Type="Self.Tratamientos" Multiplicity="1" />
+          <End Role="TratamientoPromo" Type="Self.TratamientoPromo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tratamientos">
+              <PropertyRef Name="IdTratamiento" />
+            </Principal>
+            <Dependent Role="TratamientoPromo">
+              <PropertyRef Name="IdTratamiento" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BellaDonnaDBModelStoreContainer">
+          <EntitySet Name="Promos" EntityType="Self.Promos" Schema="Tratamientos" store:Type="Tables" />
+          <EntitySet Name="TratamientoPromo" EntityType="Self.TratamientoPromo" Schema="Tratamientos" store:Type="Tables" />
+          <EntitySet Name="Tratamientos" EntityType="Self.Tratamientos" Schema="Tratamientos" store:Type="Tables" />
+          <AssociationSet Name="FK_Promo" Association="Self.FK_Promo">
+            <End Role="Promos" EntitySet="Promos" />
+            <End Role="TratamientoPromo" EntitySet="TratamientoPromo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tratamiento" Association="Self.FK_Tratamiento">
+            <End Role="Tratamientos" EntitySet="Tratamientos" />
+            <End Role="TratamientoPromo" EntitySet="TratamientoPromo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BellaDonnaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Promos">
+          <Key>
+            <PropertyRef Name="IdPromo" />
+          </Key>
+          <Property Name="IdPromo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Precio" Type="Int32" Nullable="false" />
+          <Property Name="Sesiones" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Tratamientos" Relationship="Self.TratamientoPromo" FromRole="Promos" ToRole="Tratamientos" />
+        </EntityType>
+        <EntityType Name="Tratamientos">
+          <Key>
+            <PropertyRef Name="IdTratamiento" />
+          </Key>
+          <Property Name="IdTratamiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Precio" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Promos" Relationship="Self.TratamientoPromo" FromRole="Tratamientos" ToRole="Promos" />
+        </EntityType>
+        <Association Name="TratamientoPromo">
+          <End Role="Promos" Type="Self.Promos" Multiplicity="*" />
+          <End Role="Tratamientos" Type="Self.Tratamientos" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="Contexto" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Promos" EntityType="Self.Promos" />
+          <EntitySet Name="Tratamientos" EntityType="Self.Tratamientos" />
+          <AssociationSet Name="TratamientoPromo" Association="Self.TratamientoPromo">
+            <End Role="Promos" EntitySet="Promos" />
+            <End Role="Tratamientos" EntitySet="Tratamientos" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BellaDonnaDBModelStoreContainer" CdmEntityContainer="Contexto">
+          <EntitySetMapping Name="Promos">
+            <EntityTypeMapping TypeName="BellaDonnaDBModel.Promos">
+              <MappingFragment StoreEntitySet="Promos">
+                <ScalarProperty Name="IdPromo" ColumnName="IdPromo" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Sesiones" ColumnName="Sesiones" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tratamientos">
+            <EntityTypeMapping TypeName="BellaDonnaDBModel.Tratamientos">
+              <MappingFragment StoreEntitySet="Tratamientos">
+                <ScalarProperty Name="IdTratamiento" ColumnName="IdTratamiento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="TratamientoPromo" TypeName="BellaDonnaDBModel.TratamientoPromo" StoreEntitySet="TratamientoPromo">
+            <EndProperty Name="Promos">
+              <ScalarProperty Name="IdPromo" ColumnName="IdPromo" />
+            </EndProperty>
+            <EndProperty Name="Tratamientos">
+              <ScalarProperty Name="IdTratamiento" ColumnName="IdTratamiento" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

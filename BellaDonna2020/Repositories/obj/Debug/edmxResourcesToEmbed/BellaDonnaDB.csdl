@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BellaDonnaDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Promos">
+    <Key>
+      <PropertyRef Name="IdPromo" />
+    </Key>
+    <Property Name="IdPromo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Precio" Type="Int32" Nullable="false" />
+    <Property Name="Sesiones" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Tratamientos" Relationship="Self.TratamientoPromo" FromRole="Promos" ToRole="Tratamientos" />
+  </EntityType>
+  <EntityType Name="Tratamientos">
+    <Key>
+      <PropertyRef Name="IdTratamiento" />
+    </Key>
+    <Property Name="IdTratamiento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="75" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Precio" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Promos" Relationship="Self.TratamientoPromo" FromRole="Tratamientos" ToRole="Promos" />
+  </EntityType>
+  <Association Name="TratamientoPromo">
+    <End Role="Promos" Type="Self.Promos" Multiplicity="*" />
+    <End Role="Tratamientos" Type="Self.Tratamientos" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="Contexto" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Promos" EntityType="Self.Promos" />
+    <EntitySet Name="Tratamientos" EntityType="Self.Tratamientos" />
+    <AssociationSet Name="TratamientoPromo" Association="Self.TratamientoPromo">
+      <End Role="Promos" EntitySet="Promos" />
+      <End Role="Tratamientos" EntitySet="Tratamientos" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

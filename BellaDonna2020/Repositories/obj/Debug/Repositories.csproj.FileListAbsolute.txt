@@ -1,0 +1,12 @@
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Repositories\obj\Debug\Repositories.csprojAssemblyReference.cache
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Repositories\obj\Debug\Repositories.csproj.CoreCompileInputs.cache
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Repositories\bin\Debug\Repositories.dll.config
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Repositories\bin\Debug\Repositories.dll
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Repositories\bin\Debug\Repositories.pdb
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Repositories\bin\Debug\EntityFramework.dll
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Repositories\bin\Debug\EntityFramework.SqlServer.dll
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Repositories\bin\Debug\EntityFramework.xml
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Repositories\bin\Debug\EntityFramework.SqlServer.xml
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Repositories\obj\Debug\Repositories.csproj.CopyComplete
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Repositories\obj\Debug\Repositories.dll
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Repositories\obj\Debug\Repositories.pdb

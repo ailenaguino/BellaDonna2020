@@ -1,0 +1,12 @@
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Services\obj\Debug\Services.csproj.CoreCompileInputs.cache
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Services\obj\Debug\Services.csprojAssemblyReference.cache
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Services\bin\Debug\Services.dll
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Services\bin\Debug\Services.pdb
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Services\bin\Debug\Repositories.dll
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Services\bin\Debug\EntityFramework.dll
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Services\bin\Debug\Repositories.pdb
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Services\bin\Debug\Repositories.dll.config
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Services\bin\Debug\EntityFramework.xml
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Services\obj\Debug\Services.csproj.CopyComplete
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Services\obj\Debug\Services.dll
+D:\Desktop\Bella Donna\Pagina\BellaDonna2020\Services\obj\Debug\Services.pdb

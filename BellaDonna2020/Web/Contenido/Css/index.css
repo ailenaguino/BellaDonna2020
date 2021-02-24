@@ -1,0 +1,101 @@
+﻿* {
+    font-family: "Merriweather";
+}
+
+.title-index {
+    font-size: 50px;
+}
+
+#carousel-index {
+    margin: 3% auto;
+    font-size: 50px;
+}
+
+    #carousel-index:focus {
+        outline: none;
+    }
+
+    #carousel-index img {
+        display: inline;
+        width: 60%;
+    }
+
+.slick-next {
+    right: 20px;
+}
+
+    .slick-next:before, .slick-prev:before {
+        font-size: 40px;
+        color: #12b38b;
+    }
+
+.slick-prev {
+    z-index: 1;
+    left: 20px;
+}
+
+.galery-cont {
+    display: flex;
+    font-size: 30px;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.service-img img {
+    width: 300px;
+    height: 200px;
+}
+
+    .service-img img:hover {
+        opacity: 0.4;
+        transition: ease 0.25s;
+    }
+
+.service-img {
+    position: relative;
+    margin: 10px 0;
+    background-color: white;
+}
+
+.service-name {
+    display: flex;
+    justify-content: center;
+}
+
+.service-name h2 {
+    position: absolute;
+    /*background-color: rgb(255,255,255, 0.4);
+    text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);*/
+    padding: 1% 1%;
+    color: white;
+    box-sizing: border-box;
+    bottom: 30%;
+    margin: auto;
+}
+
+.underline {
+    width: 70%;
+    height: 4px;
+    z-index: 10;
+    background: white;
+    border-radius: 50%;
+    bottom: 30%;
+    position: absolute;
+    -webkit-transition: 0.5s ease;
+}
+
+.service-desc {
+    display: none;
+    position: absolute;
+    bottom: 30%;
+}
+
+#services {
+    background-color: #a6d6d0;
+    margin: 6% 0;
+    padding: 10px 0;
+}
+
+.hoverImagen {
+    box-shadow: 1px 4px 15px 3px rgba(0,0,0,0.5);
+}

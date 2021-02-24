@@ -1,0 +1,170 @@
+/*
+dark slate grey #2f4f4f
+medium turquoise #48d1cc
+*/
+
+
+/* GENERAL */
+
+@font-face {
+    font-family: "Merriweather";
+    src: url(../../fonts/Merriweather-Regular.ttf);
+    }
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Merriweather";
+}
+
+img {
+    width: 25%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    padding: 10px;
+}
+
+.redes {
+    width: 100%;
+    display: flex;
+}
+
+.insta {
+    margin: auto;
+}
+
+.insta img {
+    width: 75px;
+    height: 75px;
+}
+
+.whatsapp {
+    margin: auto;
+}
+
+.whatsapp img {
+    width: 75px;
+    height: 75px;
+    margin: auto;
+}
+
+
+/* HEADER */
+
+#header-spc {
+    margin: 20px 0 20px 0;
+}
+
+#header-spc div {
+    width: calc(33% - 5px);
+    text-align: center;
+}
+
+#logo-header img {
+    width: 100%;
+}
+
+
+/* NAV */
+
+nav {
+    overflow: hidden;
+    background-color: #48d1cc;
+    border-bottom: 4px solid #008682;
+}
+
+nav a {
+    color: black;
+    font-size: 1.3em;
+    text-decoration: none;
+    padding: 11px;
+}
+
+nav a:hover {
+    background-color: #008682;
+    color: white;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sticky {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+
+/* MAIN */
+
+main {
+    text-align: center;
+}
+
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    background-color: #48d1cc;
+    border-top: 4px solid #008682;
+}
+
+footer a {
+    color: black;
+    font-size: 1.3em;
+    text-decoration: none;
+    margin: 10px 0px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer li {
+    padding: 14px;
+}
+
+footer div {
+    width: calc(33% - 5px);
+}
+
+#foot2 img {
+    width: 18.5%;
+}
+
+#foot3 {
+    margin: 15px 0px;
+}
+
+#foot3 .redes{
+    display: block;
+}
+
+#foot3 h3{
+    margin-bottom: 5px;
+}
+
+#foot3 .whatsapp{
+    margin-bottom: 5px;
+}
+
+#bella-donna-foot {
+    width: 50%;
+}
+
+#foot1,
+#foot2,
+#foot3 {
+    display: block;
+    text-align: center;
+    margin: auto;
+}
